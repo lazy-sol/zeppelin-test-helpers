@@ -1,6 +1,6 @@
 {
-  "name": "@openzeppelin/test-helpers",
-  "version": "0.5.16",
+  "name": "@lazy-sol/zeppelin-test-helpers",
+  "version": "1.0.0",
   "description": "JavaScript testing helpers for Ethereum smart contract development.",
   "main": "index.js",
   "files": [
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OpenZeppelin/openzeppelin-test-helpers.git"
+    "url": "git+https://github.com/lazy-sol/zeppelin-test-helpers.git"
   },
   "keywords": [
     "ethereum",
@@ -33,9 +33,9 @@
   "author": "OpenZeppelin Community <maintainers@openzeppelin.org>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/OpenZeppelin/openzeppelin-test-helpers/issues"
+    "url": "https://github.com/lazy-sol/zeppelin-test-helpers/issues"
   },
-  "homepage": "https://github.com/OpenZeppelin/openzeppelin-test-helpers#readme",
+  "homepage": "https://github.com/lazy-sol/zeppelin-test-helpers#readme",
   "dependencies": {
     "@openzeppelin/contract-loader": "^0.6.2",
     "@truffle/contract": "^4.0.35",
