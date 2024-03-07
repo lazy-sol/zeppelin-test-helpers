@@ -1,5 +1,15 @@
 # Changelog
 
+# @lazy-sol/zeppelin-test-helpers
+
+## 1.0.0
+* Updated the npm packages to the most recent compatible versions,
+  resolved (5 of 12 low, 9 of 34 moderate, 45 of 54 high, 17 of 21 critical) vulnerabilities
+* Fixed: decodeLogs cannot find events containing structures
+* Fixed: decodeLogs error "Multiple ABI entries for event, only uniquely named events are supported"
+
+# @openzeppelin/test-helpers
+
 ## 0.5.16 (2022-09-06)
  * Fix warning under Hardhat 2.11.
 
