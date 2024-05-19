@@ -156,13 +156,18 @@ function signature (name, inputs) {
 function contains (args, key, value) {
   expect(key in args).to.equal(true, `Event argument '${key}' not found`);
 
+  let delta = "0";
+  if(value && value.closeTo && value.delta && !value.ignoreCloseTo) {
+    ({closeTo: value, delta} = value);
+  }
+
   if (value === null) {
     expect(args[key]).to.equal(null,
       `expected event argument '${key}' to be null but got ${args[key]}`);
   } else if (isBN(args[key]) || isBN(value)) {
     const actual = isBN(args[key]) ? args[key].toString() : args[key];
     const expected = isBN(value) ? value.toString() : value;
-    expect(args[key]).to.be.bignumber.equal(value,
+    expect(args[key]).to.be.bignumber.closeTo(value, delta,
       `expected event argument '${key}' to have value ${expected} but got ${actual}`);
   } else {
     expect(args[key]).to.be.deep.equal(value,

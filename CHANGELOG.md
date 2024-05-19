@@ -2,6 +2,10 @@
 
 # @lazy-sol/zeppelin-test-helpers
 
+## 1.0.1
+* Added: support for approximate BN comparison in `expectEvent` via `closeTo` instead of `equal`  
+  Usage: `expectEvent(receipt, "EventName", {param: value, ..., bn_param: {closeTo: bn_value, delta: bn_value}});`
+
 ## 1.0.0
 * Updated the npm packages to the most recent compatible versions,
   resolved (5 of 12 low, 9 of 34 moderate, 45 of 54 high, 17 of 21 critical) vulnerabilities
