@@ -1,5 +1,7 @@
 const { web3, BN } = require('./setup');
-const { expect } = require('chai');
+const { assert, expect } = require('chai');
+// enable chai-subset to allow containSubset, see https://www.chaijs.com/plugins/chai-subset/
+require("chai").use(require("chai-subset"));
 const flatten = require('lodash.flatten');
 
 const { deprecate } = require('util');
@@ -170,8 +172,10 @@ function contains (args, key, value) {
     expect(args[key]).to.be.bignumber.closeTo(value, delta,
       `expected event argument '${key}' to have value ${expected} but got ${actual}`);
   } else {
-    expect(args[key]).to.be.deep.equal(value,
-      `expected event argument '${key}' to have value ${value} but got ${args[key]}`);
+    const actual = JSON.stringify(args[key]);
+    const expected = JSON.stringify(value);
+    assert.containSubset(args[key], value,
+      `expected event argument '${key}' to have value ${expected} but got ${actual}`);
   }
 }
 
