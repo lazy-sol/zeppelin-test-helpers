@@ -1,6 +1,6 @@
 {
   "name": "@lazy-sol/zeppelin-test-helpers",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JavaScript testing helpers for Ethereum smart contract development.",
   "main": "index.js",
   "files": [
@@ -18,7 +18,7 @@
     "version": "scripts/release/update-changelog-release-date.js"
   },
   "engines": {
-    "node": "^16.0.0"
+    "node": ">=16.0.0 <20.0.0"
   },
   "repository": {
     "type": "git",
@@ -58,7 +58,7 @@
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-mocha-no-only": "^1.1.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-promise": "^6.6.0",
     "eslint-plugin-standard": "^5.0.0",
     "ganache-cli": "^6.5.0",
     "openzeppelin-docs-utils": "git+https://OpenZeppelin@github.com/OpenZeppelin/docs-utils.git",

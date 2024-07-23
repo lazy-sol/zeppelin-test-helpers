@@ -166,11 +166,13 @@ function contains (args, key, value) {
   if (value === null) {
     expect(args[key]).to.equal(null,
       `expected event argument '${key}' to be null but got ${args[key]}`);
-  } else if (isBN(args[key]) || isBN(value)) {
+  } else if (isBN(args[key]) || isBN(value) || typeof value === 'number') {
     const actual = isBN(args[key]) ? args[key].toString() : args[key];
     const expected = isBN(value) ? value.toString() : value;
-    expect(args[key]).to.be.bignumber.closeTo(value, delta,
+    expect(args[key]).to.be.bignumber.closeTo(new BN(value), delta,
       `expected event argument '${key}' to have value ${expected} but got ${actual}`);
+  } else if(typeof args[key] === 'object' && typeof value === 'object') {
+    Object.entries(value).forEach(([k, v]) => contains(args[key], k, v));
   } else {
     const actual = JSON.stringify(args[key]);
     const expected = JSON.stringify(value);

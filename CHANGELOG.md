@@ -2,6 +2,15 @@
 
 # @lazy-sol/zeppelin-test-helpers
 
+## 1.0.3
+* Added: support for nested structures in events
+* Fixed: incorrect BN vs BN/Number matching in events forces to use strings for BN parameters matching
+* Updated the Node.js version requirement from 16 to 16 – 19
+
+## 1.0.2
+* Fixed: incorrect matching of the custom structures in the events makes it impossible to fully verify events containing
+  structures
+
 ## 1.0.1
 * Added: support for approximate BN comparison in `expectEvent` via `closeTo` instead of `equal`  
   Usage: `expectEvent(receipt, "EventName", {param: value, ..., bn_param: {closeTo: bn_value, delta: bn_value}});`

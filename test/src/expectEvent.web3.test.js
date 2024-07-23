@@ -67,8 +67,8 @@ contract('expectEvent (web3 contracts) ', function ([deployer]) {
           expectEvent(this.receipt, 'ShortUint', { value: new BN(this.value) });
         });
 
-        it('throws if an emitted event with correct JavaScript number is requested', function () {
-          expect(() => expectEvent(this.receipt, 'ShortUint', { value: this.value })).to.throw();
+        it('accepts emitted events with correct JavaScript Number', function () {
+          expectEvent(this.receipt, 'ShortUint', { value: this.value });
         });
 
         it('throws if an emitted event with correct BN and incorrect name is requested', function () {
@@ -94,8 +94,8 @@ contract('expectEvent (web3 contracts) ', function ([deployer]) {
           expectEvent(this.receipt, 'ShortInt', { value: new BN(this.value) });
         });
 
-        it('throws if an emitted event with correct JavaScript number is requested', function () {
-          expect(() => expectEvent(this.receipt, 'ShortInt', { value: this.value })).to.throw();
+        it('accepts emitted events with correct JavaScript Number', function () {
+          expectEvent(this.receipt, 'ShortInt', { value: this.value });
         });
 
         it('throws if an unemitted event is requested', function () {
@@ -322,7 +322,7 @@ contract('expectEvent (web3 contracts) ', function ([deployer]) {
 
       it('throws if incorrect values are passed', function () {
         expect(() => expectEvent(this.receipt, 'LongUint', { value: new BN(41) })).to.throw();
-        expect(() => expectEvent(this.receipt, 'LongUint', { value: 24 })).to.throw();
+        expect(() => expectEvent(this.receipt, 'LongUint', { value: 23 })).to.throw();
       });
     });
 

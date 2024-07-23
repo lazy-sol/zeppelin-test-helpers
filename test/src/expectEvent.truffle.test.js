@@ -35,11 +35,10 @@ contract('expectEvent (truffle contracts)', function ([deployer]) {
         );
       });
 
-      it('throws if a correct JavaScript number is passed', async function () {
-        const { message } = await assertFailure(
-          expectEvent.inConstruction(this.emitter, 'ShortUint', { value: this.constructionValues.uint })
+      it('accepts emitted events with correct JavaScript Number', async function () {
+        await expectEvent.inConstruction(this.emitter, 'ShortUint',
+          { value: this.constructionValues.uint }
         );
-        expect(message).to.match(errorRegex);
       });
 
       it('throws if an incorrect value is passed', async function () {
@@ -122,8 +121,8 @@ contract('expectEvent (truffle contracts)', function ([deployer]) {
           expectEvent(this.receipt, 'ShortUint', { value: new BN(this.value) });
         });
 
-        it('throws if an emitted event with correct JavaScript number is requested', function () {
-          expect(() => expectEvent(this.receipt, 'ShortUint', { value: this.value })).to.throw();
+        it('accepts emitted events with correct with correct JavaScript Number', function () {
+          expectEvent(this.receipt, 'ShortUint', { value: this.value });
         });
 
         it('throws if an emitted event with correct BN and incorrect name is requested', function () {
@@ -150,8 +149,8 @@ contract('expectEvent (truffle contracts)', function ([deployer]) {
           expectEvent(this.receipt, 'ShortInt', { value: new BN(this.value) });
         });
 
-        it('throws if an emitted event with correct JavaScript number is requested', function () {
-          expect(() => expectEvent(this.receipt, 'ShortInt', { value: this.value })).to.throw();
+        it('accepts emitted events with correct JavaScript Number', function () {
+          expectEvent(this.receipt, 'ShortInt', { value: this.value });
         });
 
         it('throws if an unemitted event is requested', function () {
@@ -378,7 +377,7 @@ contract('expectEvent (truffle contracts)', function ([deployer]) {
 
       it('throws if incorrect values are passed', function () {
         expect(() => expectEvent(this.receipt, 'LongUint', { value: new BN(41) })).to.throw();
-        expect(() => expectEvent(this.receipt, 'LongUint', { value: 24 })).to.throw();
+        expect(() => expectEvent(this.receipt, 'LongUint', { value: 23 })).to.throw();
       });
     });
 
