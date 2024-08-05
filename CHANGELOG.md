@@ -2,6 +2,9 @@
 
 # @lazy-sol/zeppelin-test-helpers
 
+## 1.0.5
+* Hotfix: move `chai-subset` dependency from `devDependencies` to `dependencies` for smooth client integration
+
 ## 1.0.4
 * Removed `@openzeppelin/contract-loader` dependency
 * Removed `openzeppelin-docs-utils` dependency
