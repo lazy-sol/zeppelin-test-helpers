@@ -3,15 +3,16 @@ const { expect } = require('chai');
 const assertFailure = require('../helpers/assertFailure');
 const expectEvent = require('../../src/expectEvent');
 
-const { setupLoader } = require('@openzeppelin/contract-loader');
+function loadArtifact(name) {
+  const {abi, bytecode} = require(`../../build/contracts/${name}.json`);
+  return new web3.eth.Contract(abi, {
+    data: bytecode,
+    gas: 0xFFFFFFFF,
+  });
+}
 
-const web3Loader = setupLoader({
-  provider: web3.eth.currentProvider,
-  defaultGas: 2e6,
-}).web3;
-
-const EventEmitter = web3Loader.fromArtifact('EventEmitter');
-const IndirectEventEmitter = web3Loader.fromArtifact('IndirectEventEmitter');
+const EventEmitter = loadArtifact('EventEmitter');
+const IndirectEventEmitter = loadArtifact('IndirectEventEmitter');
 
 contract('expectEvent (web3 contracts) ', function ([deployer]) {
   before(function () {

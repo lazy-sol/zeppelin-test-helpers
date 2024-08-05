@@ -37,7 +37,7 @@ async function balanceTracker (owner, unit = 'wei') {
 }
 
 async function balanceCurrent (account, unit = 'wei') {
-  return new BN(fromWei(await web3.eth.getBalance(account), unit));
+  return new BN(fromWei(new BN(await web3.eth.getBalance(account)), unit));
 }
 
 async function feesPaid (account, sinceBlock) {

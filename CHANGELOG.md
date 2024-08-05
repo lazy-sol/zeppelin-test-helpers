@@ -2,13 +2,19 @@
 
 # @lazy-sol/zeppelin-test-helpers
 
+## 1.0.4
+* Removed `@openzeppelin/contract-loader` dependency
+* Removed `openzeppelin-docs-utils` dependency
+* Updated the npm packages to the most recent compatible versions
+* Executed first steps to support future web3 1x -> 4x upgrade
+
 ## 1.0.3
-* Added: support for nested structures in events
-* Fixed: incorrect BN vs BN/Number matching in events forces to use strings for BN parameters matching
+* Added support for nested structures in events
+* Fixed incorrect BN vs BN/Number matching in events forces to use strings for BN parameters matching
 * Updated the Node.js version requirement from 16 to 16 – 19
 
 ## 1.0.2
-* Fixed: incorrect matching of the custom structures in the events makes it impossible to fully verify events containing
+* Fixed incorrect matching of the custom structures in the events makes it impossible to fully verify events containing
   structures
 
 ## 1.0.1
@@ -18,8 +24,8 @@
 ## 1.0.0
 * Updated the npm packages to the most recent compatible versions,
   resolved (5 of 12 low, 9 of 34 moderate, 45 of 54 high, 17 of 21 critical) vulnerabilities
-* Fixed: decodeLogs cannot find events containing structures
-* Fixed: decodeLogs error "Multiple ABI entries for event, only uniquely named events are supported"
+* Fixed decodeLogs cannot find events containing structures
+* Fixed decodeLogs error "Multiple ABI entries for event, only uniquely named events are supported"
 
 # @openzeppelin/test-helpers
 

@@ -2,7 +2,7 @@ require('../configure')();
 
 const web3 = require('./config/web3').getWeb3();
 
-const BN = web3.utils.BN;
+const {BN} = require('web3-utils');
 const chaiBN = require('chai-bn')(BN);
 
 require('chai').use(chaiBN);
