@@ -37,7 +37,7 @@ async function checkRevertReasonSupport (provider) {
 
     const warn = function (msg) {
       console.log(`\
-${colors.white.bgBlack('@openzeppelin/test-helpers')} ${colors.black.bgYellow('WARN')} expectRevert: ${msg}`
+${colors.white.bgBlack('@lazy-sol/zeppelin-test-helpers')} ${colors.black.bgYellow('WARN')} expectRevert: ${msg}`
       );
     };
 

@@ -2,6 +2,11 @@
 
 # @lazy-sol/zeppelin-test-helpers
 
+## 1.0.6
+* Updated the npm packages to the most recent compatible versions
+* Updated the Node.js version requirement from \[16 – 19\] to 22+
+* Fixed some failing tests
+
 ## 1.0.5
 * Hotfix: move `chai-subset` dependency from `devDependencies` to `dependencies` for smooth client integration
 
@@ -14,7 +19,7 @@
 ## 1.0.3
 * Added support for nested structures in events
 * Fixed incorrect BN vs BN/Number matching in events forces to use strings for BN parameters matching
-* Updated the Node.js version requirement from 16 to 16 – 19
+* Updated the Node.js version requirement from 16 to \[16 – 19\]
 
 ## 1.0.2
 * Fixed incorrect matching of the custom structures in the events makes it impossible to fully verify events containing

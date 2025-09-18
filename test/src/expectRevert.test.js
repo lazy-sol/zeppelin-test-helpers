@@ -30,8 +30,8 @@ describe('expectRevert', function () {
       const assertion =
         await assertFailure(expectRevert(this.reverter.revertFromRevertWithReason(), 'Wrong reason'));
 
-      expect(assertion.message).to.include('Wrong kind of exception received');
-      expect(assertion.actual).to.equal('Call to revert');
+      expect(assertion.message.startsWith('Wrong kind of exception received')).to.be.true;
+      expect(assertion.actual.endsWith('Call to revert')).to.be.true;
       expect(assertion.expected).to.equal('Wrong reason');
     });
 
@@ -120,7 +120,7 @@ describe('expectRevert', function () {
     });
 
     it('rejects an outOfGas', async function () {
-      await assertFailure(expectRevert.assertion(this.reverter.revertFromOutOfGas({ gas: 2000000 })));
+      await assertFailure(expectRevert.outOfGas(this.reverter.revertFromOutOfGas({ gas: 2000000 })));
     });
   });
 

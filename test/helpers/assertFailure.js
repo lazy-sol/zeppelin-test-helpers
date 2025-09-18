@@ -6,7 +6,7 @@ async function assertFailure (promise) {
   } catch (error) {
     return error;
   }
-  expect.fail();
+  expect.fail('Expected an exception but none was received');
 }
 
 module.exports = assertFailure;

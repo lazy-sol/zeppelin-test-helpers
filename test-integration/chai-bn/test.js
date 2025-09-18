@@ -6,7 +6,7 @@ const assert = require('assert');
 const semver = require('semver');
 
 const our = require('./package.json');
-const testHelpers = require('@openzeppelin/test-helpers/package.json');
+const testHelpers = require('@lazy-sol/zeppelin-test-helpers/package.json');
 
 assert(
   !semver.intersects(our.dependencies.chai, testHelpers.dependencies.chai),
@@ -15,7 +15,7 @@ assert(
 
 // Even though we're using different chai modules, chai-bn is still being
 // installed.
-require('@openzeppelin/test-helpers');
+require('@lazy-sol/zeppelin-test-helpers');
 
 const { expect } = require('chai');
 
